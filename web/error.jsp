@@ -8,7 +8,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <html><body>
-1234
+12346
 用户名不存在或密码错误。<a href="index.jsp">返回</a>
 
 </body></html>
