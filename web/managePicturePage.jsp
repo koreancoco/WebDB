@@ -20,5 +20,6 @@
             <td><input type="reset" value="重置" ></td>
         </tr>
     </table>
+    </form>
 </body>
 </html>
