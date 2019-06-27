@@ -23,11 +23,10 @@ import java.util.Date;
 @WebServlet("/managePicture.do")
 @MultipartConfig
 public class ManagePictureServlet extends HttpServlet {
-@Override
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    //传入参数number
         Picture pic=new Picture();
-        int num=(int)request.getSession().getAttribute("number");
+        int num=Integer.parseInt(request.getParameter("number"));
         PictureDao dao=new PictureDao();
         pic=dao.readPicture(num);
         request.getSession().setAttribute("picture", pic);
@@ -42,11 +41,12 @@ public class ManagePictureServlet extends HttpServlet {
         OutputStream outs = response.getOutputStream(); // 得到向客户端输出二进制数据的对象
         outs.write(data); // 输出数据
         outs.flush();
-
+        //outs.close();
+        //byte bs[] = pic.getStream();
+        //response.sendRedirect("/diaplaytest.jsp");
 
 
     }
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Picture pic = new Picture();
 
@@ -104,5 +104,6 @@ public class ManagePictureServlet extends HttpServlet {
 
 
 }
+
 
 

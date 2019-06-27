@@ -11,7 +11,7 @@
     <title>Titles</title>
 </head>
 <body>
-<form action = "managePicture.do" method = "post">
+<form action = "managePicture.do" enctype="multipart/form-data" method = "post">
     <table>
         <tr><td>客户号：</td> <td><input type="text" name="id" ></td></tr>
         <tr><td>客户名：</td> <td><input type="text" name="name" ></td></tr>
