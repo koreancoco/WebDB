@@ -15,14 +15,16 @@ public class Association implements Serializable {
     private String assname;// 社团名称
     private int count;
     private String captain;
+    private String introduction;
 
     public Association(){}
 
-    public Association(int id, String assname, int count, String captain) {
-        this.id = id;
-        this.assname = assname;
-        this.count = count;
-        this.captain = captain;
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
+    }
+
+    public String getIntroduction() {
+        return introduction;
     }
 
     public void setCaptain(String captain) {

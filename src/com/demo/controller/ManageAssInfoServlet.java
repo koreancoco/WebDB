@@ -1,5 +1,7 @@
 package com.demo.controller;
 
+import com.demo.model.Association;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,6 +23,8 @@ public class ManageAssInfoServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Association aid=(Association) req.getSession().getAttribute("association");
+        resp.sendRedirect("manage/manageAssInfoPage.jsp");
 
     }
 }
