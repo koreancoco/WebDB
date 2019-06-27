@@ -14,10 +14,10 @@ import java.sql.SQLException;
 /**
  * Created by Enzo Cotter on 2019/6/8.
  */
-public class PictureDao extends BaseDao{
+public class AssPictureDao extends BaseDao{
 
     // 向picture表中添加记录
-    public boolean addPicture(Picture picture) {
+    public boolean addAssPicture(Picture picture) {
         String sql="insert into asspicture (id,pname,stream) values(?,?,?)";
         try {
             Connection conn=dataSource.getConnection();
@@ -37,7 +37,7 @@ public class PictureDao extends BaseDao{
         return true;
     }
     // 读取数据库中图片
-    public  Picture readPicture(int pid) {
+    public  Picture readAssPicture(int pid) {
         //String targetPath = "D:/image/1.png";
         Connection conn;
         Picture pic=new Picture();

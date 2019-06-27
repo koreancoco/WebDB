@@ -15,7 +15,7 @@
 <body>
 
 
-<img style="width:200px;height:200px" src="managePicture.do?number=2">
+<img style="width:200px;height:200px" src="manageAssPicture.do?number=2">
 
 </body>
 </html>
