@@ -18,7 +18,7 @@ public class PictureDao extends BaseDao{
 
     // 向picture表中添加记录
     public boolean addPicture(Picture picture) {
-        String sql="insert into picture (pid,pname,stream) values(?,?,?)";
+        String sql="insert into asspicture (id,pname,stream) values(?,?,?)";
         try {
             Connection conn=dataSource.getConnection();
             PreparedStatement pstmt=conn.prepareStatement(sql);
@@ -43,7 +43,7 @@ public class PictureDao extends BaseDao{
         Picture pic=new Picture();
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = "select * from picture where pid =?";
+        String sql = "select * from asspicture where id =?";
         try {
             conn=dataSource.getConnection();
             ps = conn.prepareStatement(sql);
@@ -51,7 +51,7 @@ public class PictureDao extends BaseDao{
             rs = ps.executeQuery();
             while (rs.next()) {
                 //Utils.readImage(in, targetPath);
-                pic.setId(rs.getInt("pid"));
+                pic.setId(rs.getInt("id"));
                 pic.setName(rs.getString("pname"));
                 pic.setStream(rs.getBinaryStream("stream"));
             }

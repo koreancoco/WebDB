@@ -78,7 +78,7 @@ public class ManagePictureServlet extends HttpServlet {
             p.write(path + File.separator + fileName);
             System.out.println(path + File.separator + fileName);
             System.out.println("写入成功" + path + File.separator + fileName);
-            pic.setId(Integer.parseInt(request.getParameter("pid")));
+            pic.setId(Integer.parseInt(request.getParameter("id")));
             pic.setName(request.getParameter("name"));
             InputStream is=request.getInputStream();
 
