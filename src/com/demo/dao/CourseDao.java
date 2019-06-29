@@ -19,6 +19,56 @@ import java.util.List;
   **/
 public class CourseDao extends BaseDao {
 
+    public boolean deleteCourse(int cid) {
+        String sql="delete from course where cid=?";
+        try {
+            Connection conn=dataSource.getConnection();
+            PreparedStatement pstmt=conn.prepareStatement(sql);
+            pstmt.setInt(1, cid);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    public int courseCount(int assid){
+        String sql="select count(assid) asscount from course where assid=?";
+        int num=0;
+        try {
+            Connection conn=dataSource.getConnection();
+            PreparedStatement pstmt=conn.prepareStatement(sql);
+            pstmt.setInt(1, assid);
+            ResultSet rset= pstmt.executeQuery();
+            if(rset.next()) {
+                num=rset.getInt("asscount");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return num;
+        }
+        return num;
+    }
+
+    public boolean updateCourse(Course c) {
+        String sql="update course set cname=?,maxnum=?,introduction=? where cid=?";
+
+        try {
+            Connection conn=dataSource.getConnection();
+            PreparedStatement pstmt=conn.prepareStatement(sql);
+            pstmt.setString(1, c.getCname());
+            pstmt.setInt(2, c.getMaxnum());
+            pstmt.setString(3, c.getIntroduction());
+            pstmt.setInt(4,c.getCid());
+            pstmt.executeUpdate();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
 
     public boolean addCourse(Course c) {
         String sql="insert into course (cname,maxnum,teacherid,assid,introduction) "

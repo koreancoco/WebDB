@@ -10,5 +10,5 @@
 <html><body>
 12345
 用户名不存在或密码错误。<a href="index.jsp">返回</a>
-
+<img style="width:200px;height:200px" src="managePicture.do?number=2">
 </body></html>

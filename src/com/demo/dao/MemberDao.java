@@ -4,6 +4,7 @@ import com.demo.model.Addition;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -40,4 +41,27 @@ public class MemberDao extends BaseDao {
 
         return true;
     }
+
+    public int memberCount(int assid) {
+
+        String sql="select count(joinass) membercount from memberinfo where joinass=?";
+        int num=0;
+        try {
+            Connection conn=dataSource.getConnection();
+            PreparedStatement pstmt=conn.prepareStatement(sql);
+            pstmt.setInt(1, assid);
+            ResultSet rset= pstmt.executeQuery();
+            if(rset.next()) {
+                num=rset.getInt("membercount");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return num;
+        }
+
+
+        return num;
+
+    }
+
 }

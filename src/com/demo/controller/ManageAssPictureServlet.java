@@ -2,6 +2,7 @@ package com.demo.controller;
 
 
 import com.demo.dao.AssPictureDao;
+import com.demo.model.Association;
 import com.demo.model.Picture;
 
 import javax.servlet.ServletException;
@@ -20,6 +21,7 @@ import java.io.*;
 @MultipartConfig
 public class ManageAssPictureServlet extends HttpServlet {
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Picture pic=new Picture();
         int num=Integer.parseInt(request.getParameter("number"));
@@ -43,6 +45,7 @@ public class ManageAssPictureServlet extends HttpServlet {
 
 
     }
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Picture pic = new Picture();
 
@@ -60,8 +63,8 @@ public class ManageAssPictureServlet extends HttpServlet {
             System.out.println("获取文件成功" + fileName);
             p.write(path + File.separator + fileName);
             InputStream is=request.getInputStream();
-            pic.setId(Integer.parseInt(request.getParameter("id")));
-            pic.setName(request.getParameter("name"));
+            pic.setId(((Association) request.getSession().getAttribute("association")).getId());
+            pic.setName(fileName);
             File file = new File(path + File.separator + fileName); //获取表单传过来的图片的url
             FileInputStream fis = new FileInputStream(file);
             pic.setStream(fis);

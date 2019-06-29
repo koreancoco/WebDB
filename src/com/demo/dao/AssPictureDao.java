@@ -2,6 +2,7 @@ package com.demo.dao;
 
 
 import com.demo.model.Picture;
+import sun.nio.cs.ext.PCK;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,22 +17,60 @@ import java.sql.SQLException;
  */
 public class AssPictureDao extends BaseDao{
 
-    // 向picture表中添加记录
-    public boolean addAssPicture(Picture picture) {
-        String sql="insert into asspicture (id,pname,stream) values(?,?,?)";
+
+    public boolean isPictureExist(Picture picture) {
+        String sql="select id from asspicture where id=?";
         try {
+
             Connection conn=dataSource.getConnection();
             PreparedStatement pstmt=conn.prepareStatement(sql);
             pstmt.setInt(1, picture.getId());
-            pstmt.setString(2, picture.getName());
-            pstmt.setBinaryStream(3, picture.getStream(),picture.getStream().available());
-
-            pstmt.executeUpdate();
+            pstmt.executeQuery();
             conn.close();
         } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
+        return true;
+    }
+
+    // 向picture表中添加记录
+    public boolean addAssPicture(Picture picture) {
+        if(isPictureExist(picture)) {
+            String sql="update asspicture set stream=? where id=?";
+
+            try {
+
+                Connection conn=dataSource.getConnection();
+                PreparedStatement pstmt=conn.prepareStatement(sql);
+                pstmt.setBinaryStream(1, picture.getStream(),picture.getStream().available());
+                pstmt.setInt(2, picture.getId());
+                pstmt.executeUpdate();
+                conn.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                return false;
+            }
+        } else {
+            String sql="insert into asspicture (id,pname,stream) values(?,?,?)";
+
+            try {
+                Connection conn=dataSource.getConnection();
+                PreparedStatement pstmt=conn.prepareStatement(sql);
+                pstmt.setInt(1, picture.getId());
+                pstmt.setString(2, picture.getName());
+                pstmt.setBinaryStream(3, picture.getStream(),picture.getStream().available());
+
+                pstmt.executeUpdate();
+                conn.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                return false;
+            }
+        }
+
 
 
         return true;

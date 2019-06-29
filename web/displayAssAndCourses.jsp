@@ -112,7 +112,7 @@
                 <li><a href="#">${sname}</a></li>
                 </li>
 
-
+            </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
@@ -126,17 +126,23 @@
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner">
+
         <div class="item active">
-            <img src="images/1544767868616.jpg" alt="First slide">
+            <img src="images/juxie.jpg" alt="First slide">
+
         </div>
         <div class="item">
-            <img src="images/1556444594579.jpg" alt="Second slide">
+            <img src="images/1544767868616.jpg" alt="Second slide">
         </div>
         <div class="item">
-            <img src="images/1557286925504.jpg" alt="Third slide">
+            <img src="images/1556444594579.jpg" alt="Third slide">
+        </div>
+        <div class="item">
+            <img src="images/1557286925504.jpg" alt="Forth slide">
         </div>
     </div>
     <!-- 轮播（Carousel）导航 -->
@@ -165,82 +171,20 @@
             </div>
         </div>
     </div>
-        <%--    <!-- 2 -->--%>
-        <%--    <div class="col-xs-8 col-md-3">--%>
-        <%--        <div class="thumbnail">--%>
-        <%--            <img class="img-circle" src="images/web2.jpg" alt="play">--%>
-        <%--            <div class="caption">--%>
-        <%--                <div class="tags"><b>WELCOME</b></div>--%>
-        <%--                <h3 class="text-center">Inside Daily Brief</h3>--%>
-        <%--                <p>A concise presentation of the world's most important, interesting news</p>--%>
-        <%--                <a data-remote="true" data-disable-with="Opening ..." class="col-xs-12  btn-susbcr" href="/lists/venture-capital/subscription_modal">--%>
-        <%--                    Join us--%>
-        <%--                </a>--%>
-        <%--            </div>--%>
-
-        <%--        </div>--%>
-        <%--    </div>--%>
-        <%--    <!-- 3 -->--%>
-        <%--    <div class="col-xs-8 col-md-3">--%>
-        <%--        <div class="thumbnail">--%>
-        <%--            <img class="img-circle" src="images/web3.png" alt="play">--%>
-        <%--            <div class="caption">--%>
-        <%--                <div class="tags"><b>HEART</b></div>--%>
-        <%--                <h3 class="text-center">Inside Denver Slider</h3>--%>
-        <%--                <p>The news, trends and tech that are reshaping the rapidly changing world of Denver</p>--%>
-        <%--                <a data-remote="true" data-disable-with="Opening ..." class="col-xs-12  btn-susbcr" href="/lists/venture-capital/subscription_modal">--%>
-        <%--                    Join us--%>
-        <%--                </a>--%>
-        <%--            </div>--%>
-
-        <%--        </div>--%>
-        <%--    </div>--%>
     </c:forEach>
 
 </div>
 
 <div>
-<%--<table border="1" class="table table-hover">--%>
-
-<%--    <tr><td>商品号</td><td>商品名</td><td>价格</td><td>数量</td></tr>--%>
-<%--    <c:forEach items="${sessionScope.productList}" var="product" >--%>
-<%--        <tr>--%>
-<%--        <td>${product.prod_id}</td>--%>
-<%--        <td>${product.pname}</td>--%>
-<%--        <td>${product.price}</td>--%>
-<%--        <td>${product.stock}</td>--%>
-<%--        </tr>--%>
-<%--    </c:forEach>--%>
-<%--    <c:set var="salary" scope="session" value="${2000*2}"/>--%>
-<%--    <c:if test="${salary > 2000}">--%>
-<%--    <p>我的工资为: <c:out value="${salary}"/><p>--%>
-<%--    </c:if>--%>
-<%--</table>--%>
 </div>
 <style type="text/css">
-    .bg {
-        background: url("images/1544767868616.jpg");
-        opacity: 0.95;
-        width:841px;
-        /*position:absolute;*/
-        height: 307px;
-    }
 
-    .swiper-slide {
-        -webkit-flex-shrink: 0;
-        -ms-flex: 0 0 auto;
-        /* flex-shrink: 0; */
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
+  .thumbnail {
+      margin-bottom: 50px;
+  }
 
     body {
         padding-top: 50px;
-    }
-    .starter-template {
-        padding: 40px 15px;
-        text-align: center;
     }
 
     .navbar-default {
@@ -266,19 +210,12 @@
     }
 
 
-                          .newsletters {
-                              position: relative;
-                          }
 
     .row {
         margin-left: -15px;
         margin-right: -15px;
     }
 
-    .infoheader {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
 
 
     .btn-susbcr {
@@ -312,20 +249,7 @@
         padding: 5px 8px;
         min-height: 19px;
     }
-    .tags {
-        background-color: #ffeee5;
-        border-radius: 6px;
-        font-size: 10px;
-        max-width: 58px;
-        position: absolute;
-        right: 0;
-        text-align: center;
-        top: 0;
-        width: auto;
-        color: #ff5c03;
-        padding: 5px 8px;
-        min-height: 19px;
-    }
+
 
     a{
         text-decoration: none;

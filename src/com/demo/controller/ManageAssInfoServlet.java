@@ -1,5 +1,7 @@
 package com.demo.controller;
 
+import com.demo.dao.CourseDao;
+import com.demo.dao.MemberDao;
 import com.demo.model.Association;
 
 import javax.servlet.ServletException;
@@ -24,6 +26,11 @@ public class ManageAssInfoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Association aid=(Association) req.getSession().getAttribute("association");
+        CourseDao dao=new CourseDao();
+        MemberDao mdao=new MemberDao();
+        req.getSession().setAttribute("courseCount", dao.courseCount(aid.getId()));
+        req.getSession().setAttribute("memberCount", mdao.memberCount(aid.getId()));
+
         resp.sendRedirect("manage/manageAssInfoPage.jsp");
 
     }

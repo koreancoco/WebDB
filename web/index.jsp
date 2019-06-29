@@ -126,7 +126,7 @@
                     <li><a href="manageClassPage.do">社团课程管理</a></li>
                     <li><a href="manageTeacher.do">教师管理</a></li>
                     <li><a href="manageStudent.do">学员</a></li>
-                    <li><a href="manageStudent.do">社团信息管理</a></li>
+                    <li><a href="manageAssInfo.do">社团信息管理</a></li>
                     <li><a href="manageStudent.do">选课学员管理</a></li>
                   </ul>
                 </li>
@@ -163,7 +163,8 @@
   <!-- 1 -->
   <div class="col-sm-6 col-md-3">
     <div class="thumbnail">
-      <img class="img-circle" src="images/fruit.png" alt="shoot">
+      <img class="img-circle"  src="manageAssPicture.do?number=0">
+<%--      <img class="img-circle" src="images/fruit.png" alt="shoot">--%>
       <div class="caption">
         <div class="tags"><b>DAILY</b></div>
         <h3 class="text-center">阿妮蛋糕社</h3>
