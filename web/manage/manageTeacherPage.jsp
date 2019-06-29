@@ -137,4 +137,82 @@
 
 
 </body>
+<style type="text/css">
+
+    .edit {
+        margin-bottom: 50px;
+        margin-right: 150px;
+    }
+
+
+
+    .page-content {
+        padding-top: 20px;
+    }
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    .col-9 {
+        width: 75%;
+    }
+    .pr-4 {
+        padding-right: 24px!important;
+    }
+
+    .float-left {
+        float: left!important;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .menu {
+        background-color: #fff;
+        border: 1px solid #d1d5da;
+        border-radius: 3px;
+        list-style: none;
+        margin-bottom: 15px;
+    }
+
+    .menu-heading:first-child {
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+    }
+
+    .note {
+        color: #586069;
+        font-size: 12px;
+        margin: 4px 0 2px;
+        min-height: 17px;
+    }
+
+    a{
+        text-decoration: none;
+    }
+    form {
+        display: block;
+        margin-top: 0em;
+    }
+    .form-group {
+        margin: 15px 0;
+    }
+    .form-control {
+        background-color: #fafbfc;
+        margin-right: 5px;
+        max-width: 100%;
+        width: 300px;
+    }
+
+    .form-group .form-control.user-profile-bio-field {
+        height: 5.35em;
+        min-height: 0;
+        width: 300px;
+    }
+
+</style>
+
 </html>
